@@ -1,10 +1,14 @@
 import { values } from 'lodash';
 
-const selectAllPokemon = ({pokemon}) => {
+const selectAllPokemon = ({pokemon: { entities }}) => {
   // return values(pokemon);
   // can use lodash or just vanilla javascript
-  return Object.keys(pokemon).map( id => pokemon[id]);
+  return Object.keys(entities).map( id => entities[id]);
 };
+
+
+
+
 
 export default selectAllPokemon;
 
