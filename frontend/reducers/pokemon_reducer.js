@@ -1,13 +1,14 @@
 import { RECEIVE_ALL_POKEMON } from '../actions/pokemon_actions';
 import { merge } from "lodash";
+import selectAllPokemon from './selectors';
 
-let defaultState = {pokemon: {}};
+let defaultState = {};
 
 const pokemonReducer = (state = defaultState, action) => {
   switch (action.type) {
     case RECEIVE_ALL_POKEMON:
       let newState = merge( {}, state);
-      newState.pokemon = action.pokemon;
+      newState = action.pokemon;
       return newState;
     default:
       return state;
@@ -15,3 +16,5 @@ const pokemonReducer = (state = defaultState, action) => {
 };
 
 export default pokemonReducer;
+
+window.selectAllPokemon = selectAllPokemon;
